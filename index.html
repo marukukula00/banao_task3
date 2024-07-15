@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="root.css">
+  <title>Input and Button Example</title>
+</head>
+<body>
+  <div style="padding: var(--margin-large); max-width: 400px; margin: auto;">
+    <label for="input-field">Input Field:</label>
+    <input id="input-field" class="input-large input-icon-left" type="text" placeholder="Type here...">
+    
+    <button id="submit-button" class="button-primary">Submit</button>
+  </div>
+
+  <script>
+    document.getElementById('submit-button').addEventListener('click', function() {
+      const button = this;
+      button.disabled = true;
+      button.textContent = 'Loading...';
+
+      setTimeout(() => {
+        button.disabled = false;
+        button.textContent = 'Submit';
+      }, 2000);
+    });
+
+    const inputField = document.getElementById('input-field');
+
+    inputField.addEventListener('focus', () => {
+      inputField.style.borderColor = 'var(--color-hover)';
+      inputField.style.boxShadow = 'var(--box-shadow-default)';
+    });
+
+    inputField.addEventListener('blur', () => {
+      inputField.style.borderColor = 'var(--color-border)';
+      inputField.style.boxShadow = 'none';
+    });
+
+    inputField.addEventListener('input', () => {
+      inputField.style.borderColor = 'var(--color-primary)';
+      inputField.style.boxShadow = 'var(--box-shadow-default)';
+    });
+  </script>
+</body>
+</html>

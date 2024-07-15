@@ -1,0 +1,82 @@
+:root {
+    /* Colors */
+    --color-primary: #1890ff; /* Primary Blue */
+    --color-secondary: #6c757d; /* Secondary Gray */
+    --color-background: #ffffff; /* White */
+    --color-hover: #40a9ff; /* Hover Blue */
+    --color-disabled: #d6d6d6; /* Disabled Gray */
+    --color-border: #d9d9d9; /* Border Gray */
+  
+    /* Font Sizes */
+    --font-size-large: 1.25rem; /* 20px */
+    --font-size-default: 1rem; /* 16px */
+    --font-size-small: 0.875rem; /* 14px */
+  
+    /* Padding */
+    --padding-small: 0.5rem; /* 8px */
+    --padding-default: 0.75rem; /* 12px */
+    --padding-large: 1rem; /* 16px */
+  
+    /* Margin */
+    --margin-small: 0.5rem; /* 8px */
+    --margin-default: 1rem; /* 16px */
+    --margin-large: 1.5rem; /* 24px */
+  
+    /* Border Radius */
+    --border-radius: 0.25rem; /* 4px */
+    --border-width: 1px;
+  
+    /* Transition */
+    --transition-duration: 0.2s;
+    --transition-timing-function: ease-in-out;
+  
+    /* Box Shadow */
+    --box-shadow-default: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Atomic Classes for Buttons and Input Fields */
+  .button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-size: var(--font-size-default);
+    padding: var(--padding-default) var(--padding-large);
+    margin: var(--margin-default);
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration) var(--transition-timing-function);
+    cursor: pointer;
+  }
+  
+  .button-primary:hover {
+    background-color: var(--color-hover);
+  }
+  
+  .button-primary:disabled {
+    background-color: var(--color-disabled);
+    cursor: not-allowed;
+  }
+  
+  .input-large {
+    width: 100%;
+    padding: var(--padding-large);
+    font-size: var(--font-size-large);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function);
+    box-shadow: var(--box-shadow-default);
+  }
+  
+  .input-large:hover {
+    border-color: var(--color-primary);
+  }
+  
+  .input-large:focus {
+    border-color: var(--color-hover);
+    outline: none;
+  }
+  
+  .input-icon-left {
+    padding-left: calc(var(--padding-large) + 1.5rem);
+    background: url('icon-left.png') no-repeat 0.75rem center / 1rem 1rem;
+  }
+  
